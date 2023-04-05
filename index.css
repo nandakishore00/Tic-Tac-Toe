@@ -1,0 +1,32 @@
+/* Board styling */
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    
+  }
+  
+  /* Cell styling */
+  .cell {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  
+  /* Hover effect */
+  .cell:hover {
+    background-color: #e6e6e6;
+  }
+  
+  /* Player turn indicator */
+  #turn {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+  }
