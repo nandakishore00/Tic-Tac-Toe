@@ -29,20 +29,23 @@ color:white;
   
 }
 .center {
-  display: flex;
+  display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh; 
 }
 #board {
-    display: none ;
+    display: flex ;
     flex-wrap: wrap;
-    width: 400px;
+    width: 300px;
     height: 300px;
-    margin: 0 auto;
-    
+    margin: 50px auto;
   }
-  
+  .restart{
+    margin:20px;
+
+  }
   /* Cell styling */
   .cell {
     width: 100px;
