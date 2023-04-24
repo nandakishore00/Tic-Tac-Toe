@@ -59,7 +59,8 @@ color:white;
   
   /* Hover effect */
   .cell:hover {
-    background-color: #e6e6e6;
+    background-color: #646464;
+    
   }
   
   /* Player turn indicator */
