@@ -1,6 +1,6 @@
 /* Board styling */
 body{
-  background-color: black;
+  background-color: #37505c;
 
 }
 .starter{
@@ -17,14 +17,15 @@ body{
   
 }
 .btn-light:hover{
-background-color:grey;
+background-color:#37505c;
 font-weight: bolder;
-color:white;
+color:yellow;
 }
 .btn-light{
   padding:5px 40px;
   font-size:30px;
-  background-color: aliceblue;
+  background-color: yellow;
+  color:#37505c;
   transition: background-color 0.5s ease;
   
 }
@@ -53,13 +54,14 @@ color:white;
     font-size: 50px;
     text-align: center;
     line-height: 100px;
-    border: 2px solid ghostwhite;
+    border: 2px solid rgb(244, 244, 78);
+    color :rgb(233, 233, 215);
     cursor: pointer;
   }
   
   /* Hover effect */
   .cell:hover {
-    background-color: #646464;
+    background-color:#66767d;
     
   }
   
