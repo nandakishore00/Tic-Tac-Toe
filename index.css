@@ -32,6 +32,7 @@ color:yellow;
 .center {
   display: none;
   flex-direction: column;
+  margin:100px 0px;
   justify-content: center;
   align-items: center;
   height: 100vh; 
