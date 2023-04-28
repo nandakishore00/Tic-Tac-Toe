@@ -34,7 +34,9 @@ cells.forEach((cell)=>{
                     else{
                         header.innerHTML="PLAYER 2 WON"
                     }
-                    e.preventDefault()
+                }
+                else if(playerWon==false){
+                    header.innerHTML="IT'S A TIE"
                 }
                 e.target.innerHTML=CURRENT_PLAYER
                 if(CURRENT_PLAYER==X_PLAYER){
@@ -49,6 +51,7 @@ cells.forEach((cell)=>{
     })
 function restart(){
     header.innerHTML="TIC-TAC-TOE"
+    count=0
     cells.forEach((cell)=>{
         id=cell.id
         spaces[id]=null
@@ -66,12 +69,10 @@ function playerHasWon(){
        spaces[2]!=null &&((spaces[2]==spaces[5])&& (spaces[2]==spaces[8] ))||
        spaces[0]!=null &&((spaces[0]==spaces[4])&& (spaces[0]==spaces[8] ))||
        spaces[2]!=null &&((spaces[2]==spaces[4])&& (spaces[2]==spaces[6]))){
-        console.log('e won')
         return true
        }
        else if(count==9)
        {
-        console.log('tie')
         return false 
        }
 }

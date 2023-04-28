@@ -58,13 +58,10 @@ color:yellow;
     color :rgb(233, 233, 215);
     cursor: pointer;
   }
-  
   /* Hover effect */
   .cell:hover {
     background-color:#66767d;
-    
   }
-  
   /* Player turn indicator */
   #turn {
     font-size: 24px;
