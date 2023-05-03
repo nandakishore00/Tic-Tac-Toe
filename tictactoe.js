@@ -1,10 +1,13 @@
 const btnLight = document.querySelector(".btn-light");
 var header=document.querySelector(".heading")
+var btnXO=document.querySelectorAll(".btnXO")
 const center = document.querySelector(".center");
 const start = document.querySelector(".start");
+begin=document.querySelector(".begin")
 const starter = document.querySelector(".starter");
 const restartBtn=document.querySelector(".restart");
 const cells = document.querySelectorAll(".cell")
+var selected= document.querySelector(".selected");
 var spaces = new Array(9).fill(null);
 var gameOver=false
 var a=0
@@ -12,14 +15,37 @@ var b=0
 var c=0
 const X_PLAYER='X'
 const O_PLAYER='O'
-let CURRENT_PLAYER='X'
+var CURRENT_PLAYER
 var count=0
-start.addEventListener("click", function() {
-    center.style.display = 'flex';
-    start.style.display = 'none';
-    starter.style.height = '0vh';
+btnXO.forEach(button=>
+    button.addEventListener('click', function(e) {
+       CURRENT_PLAYER=e.target.innerHTML
+       if(e.target.classList.contains("selected")){
+        console.log('asdas')
+        e.target.classList.remove("selected")
+       }
+       else{
+        console.log(e)
+        e.target.classList.add("selected");
+       }
+        }
+    ))
+
+    {begin.addEventListener("click", function() {
+        if(CURRENT_PLAYER=="X"|| CURRENT_PLAYER=='O'){
+        center.style.display = 'flex';
+        start.style.display = 'none';
+        starter.style.height = '0vh';
+        btnXO.style.display='none';
+        }
+        else{
+            var text="Please select your symbol";
+            document.querySelector(".symbol").innerHTML=text
+        }
 })
+}
 restartBtn.addEventListener("click",restart)
+
 cells.forEach((cell)=>{
     cell.addEventListener("click",function(e){
         if(gameOver==false){
