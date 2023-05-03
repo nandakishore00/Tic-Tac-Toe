@@ -1,9 +1,10 @@
+var heading=document.querySelector(".heading")
 const btnLight = document.querySelector(".btn-light");
 var header=document.querySelector(".heading")
 var btnXO=document.querySelectorAll(".btnXO")
 const center = document.querySelector(".center");
 const start = document.querySelector(".start");
-begin=document.querySelector(".begin")
+var begin=document.querySelector(".begin")
 const starter = document.querySelector(".starter");
 const restartBtn=document.querySelector(".restart");
 const cells = document.querySelectorAll(".cell")
@@ -24,7 +25,6 @@ btnXO.forEach(button=>
         e.target.classList.remove("selected")
        }
        else{
-        console.log(e)
         e.target.classList.add("selected");
        }
        if(e.target.innerHTML=='X'){
@@ -36,7 +36,9 @@ btnXO.forEach(button=>
         }
     ))
 
-    {begin.addEventListener("click", function() {
+    begin.addEventListener("click", function() {
+        heading.innerHTML= CURRENT_PLAYER+" TURN"
+        console.log(heading.innerHTML)
         if(CURRENT_PLAYER=="X"|| CURRENT_PLAYER=='O'){
         center.style.display = 'flex';
         start.style.display = 'none';
@@ -48,11 +50,11 @@ btnXO.forEach(button=>
             document.querySelector(".symbol").innerHTML=text
         }
 })
-}
 restartBtn.addEventListener("click",restart)
 
 cells.forEach((cell)=>{
     cell.addEventListener("click",function(e){
+        
         if(gameOver==false){
             id=e.target.id
             if(spaces[id]==null)
@@ -85,13 +87,16 @@ cells.forEach((cell)=>{
                 else{
                     CURRENT_PLAYER=X_PLAYER
                 }
+                if(gameOver==false){
+                    heading.innerHTML= CURRENT_PLAYER+" TURN"
+                }
             }
     }
         })
     })
 function restart(){
     header.innerHTML="TIC-TAC-TOE"
-    count=0
+    count=0 
     var winningCombination=[a,b,c]
     const winningCell=winningCombination.map(index=>cells[index])
     winningCell.forEach(cell=>
