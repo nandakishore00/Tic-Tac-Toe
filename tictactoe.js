@@ -21,12 +21,17 @@ btnXO.forEach(button=>
     button.addEventListener('click', function(e) {
        CURRENT_PLAYER=e.target.innerHTML
        if(e.target.classList.contains("selected")){
-        console.log('asdas')
         e.target.classList.remove("selected")
        }
        else{
         console.log(e)
         e.target.classList.add("selected");
+       }
+       if(e.target.innerHTML=='X'){
+        document.querySelector(".btnO").classList.remove("selected")
+       }
+       if(e.target.innerHTML=='O'){
+        document.querySelector(".btnX").classList.remove("selected")
        }
         }
     ))

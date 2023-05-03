@@ -38,14 +38,14 @@ padding: 5px 60px;
 margin: 40px;
 }
 .btnXO:hover{
-  box-shadow: 0px 0px 5px 2px #ccc;
+  box-shadow: 0px 0px 5px 2px black;
+  border :2px solid black;
 }
 .selected{
-  background-color:#37505c;
+  background-color: rgba(144, 52, 52, 0.603);
+  border:1px solid rgba(144,52,52,0.603);
   color: #ccc;
 }
-
-
 .center {
   display: none;
   flex-direction: column;
