@@ -18,6 +18,7 @@ const X_PLAYER='X'
 const O_PLAYER='O'
 var CURRENT_PLAYER
 var count=0
+var temp
 btnXO.forEach(button=>
     button.addEventListener('click', function(e) {
        CURRENT_PLAYER=e.target.innerHTML
@@ -38,6 +39,7 @@ btnXO.forEach(button=>
 
     begin.addEventListener("click", function() {
         heading.innerHTML= CURRENT_PLAYER+" TURN"
+        temp=CURRENT_PLAYER
         console.log(heading.innerHTML)
         if(CURRENT_PLAYER=="X"|| CURRENT_PLAYER=='O'){
         center.style.display = 'flex';
@@ -70,7 +72,7 @@ cells.forEach((cell)=>{
                     })
                     e.target.innerHTML=CURRENT_PLAYER
                     gameOver=true
-                    if(CURRENT_PLAYER=='X'){
+                    if(CURRENT_PLAYER==temp){
                         header.innerHTML="PLAYER 1 WON"
                     }
                     else{
