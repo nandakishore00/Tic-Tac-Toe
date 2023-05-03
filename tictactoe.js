@@ -63,8 +63,8 @@ cells.forEach((cell)=>{
             {   spaces[id]=CURRENT_PLAYER
                 count+=1
                 const playerWon=playerHasWon()
-                if(playerWon==true){
-                    var winningCombination=[a,b,c]
+                if(playerWon!=false){
+                    var winningCombination=playerWon
                     const winningCell=winningCombination.map(index=>cells[index])
                     winningCell.forEach(cell=>
                     {
@@ -79,7 +79,7 @@ cells.forEach((cell)=>{
                         header.innerHTML="PLAYER 2 WON"
                     }
                 }
-                else if(playerWon==false){
+                else if(playerWon==false && count==9){
                     header.innerHTML="IT'S A TIE"
                 }
                 e.target.innerHTML=CURRENT_PLAYER
@@ -114,56 +114,12 @@ function restart(){
     gameOver=false
 }
 function playerHasWon(){
-    if(spaces[0]!=null &&((spaces[0]==spaces[1])&& (spaces[0]==spaces[2] ))){
-        a=0
-        b=1
-        c=2
-        return true
+    const winningCombos=[[0, 1, 2], [3, 4, 5], [6, 7, 8],[0, 3, 6], [1, 4, 7], [2, 5, 8],[0, 4, 8], [2, 4, 6]]
+    for (var i=0;i< winningCombos.length;i++){
+        const [a,b,c]=winningCombos[i]
+        if(spaces[a] && spaces[a]==spaces[b] && spaces[a]==spaces[c]){
+            return [a,b,c]
+        }
     }
-    else if(spaces[3]!=null &&((spaces[3]==spaces[4])&& (spaces[3]==spaces[5] ))){
-        a=3
-        b=4
-        c=5
-        return true
-    }
-    else if(spaces[6]!=null &&((spaces[6]==spaces[7])&& (spaces[6]==spaces[8] ))){
-        a=6
-        b=7
-        c=8
-        return true
-    }
-    else if(spaces[0]!=null &&((spaces[0]==spaces[3])&& (spaces[0]==spaces[6] ))){
-        a=0
-        b=3
-        c=6
-        return true
-    }
-    else if(spaces[1]!=null &&((spaces[1]==spaces[4])&& (spaces[1]==spaces[7] ))){
-        a=1
-        b=4
-        c=7
-        return true
-    }
-    else if(spaces[2]!=null &&((spaces[2]==spaces[5])&& (spaces[2]==spaces[8] ))){
-        a=2
-        b=5
-        c=8
-        return true
-    }
-    else if(spaces[0]!=null &&((spaces[0]==spaces[4])&& (spaces[0]==spaces[8] ))){
-        a=0
-        b=4
-        c=8
-        return true
-    }
-    else if(spaces[2]!=null &&((spaces[2]==spaces[4])&& (spaces[2]==spaces[6]))){
-        a=2
-        b=4
-        c=6
-        return true
-       }
-    else if(count==9)
-       {
-        return false 
-       }
+    return false 
 }
